@@ -1,0 +1,30 @@
+.mentorsLi {
+    padding: 10px;
+    color: brown;
+}
+
+.name {
+    font-weight: bold;
+}
+
+.email {
+    color: blue;
+}
+
+.availability {
+    font-style: italic;
+    color: blueviolet;
+}
+.mentor-image{
+    height: 220px;
+}
+/* @media (min-width: 600px) .mentor-image{
+     height: 33vw;
+    width: 33vw; 
+
+} */
+
+.mentor-add-button{
+    margin-bottom:20px;
+    padding: 10px;
+}
