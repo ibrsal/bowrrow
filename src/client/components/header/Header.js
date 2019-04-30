@@ -25,9 +25,6 @@ class Header extends React.Component {
                                             <li className="nav-item iconInternship">
                                                 <span className="icon material-icons md-36 md-dark">build</span>
                                                 <Link to="/Internships" className="menuLink nav-link"> Internships </Link></li>
-                                            <li className="nav-item iconEvents">
-                                                <span className="icon material-icons md-36 md-dark">date_range</span>
-                                                <Link to="/Events" className="menuLink nav-link"> Events </Link></li>
                                             <li className="nav-item iconMentors">
                                                 <span className="icon material-icons md-36 md-dark">accessibility_new</span>
                                                 <Link to="/Mentors" className="menuLink nav-link"> Mentors </Link></li>

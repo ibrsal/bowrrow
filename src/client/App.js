@@ -8,7 +8,6 @@ import Footer from "./components/footer/Footer";
 import Header from "./components/header/Header";
 import Internships from "./components/internships/Internships";
 import Homepage from "./components/home/HomePage";
-import Events from "./components/events/Events";
 import Mentors from "./components/mentors/Mentors";
 import Networking from "./components/networking/Networking";
 import NetworkingItemDetails from "./components/networking/Network-item-details";
@@ -16,8 +15,6 @@ import Company from "./components/networking/Company";
 import MentorForms from "./components/mentor-form";
 import NetworkForms from "./components/networking-form";
 import InternshipForms from "./components/internship-form";
-import EventsForm from './components/events-form';
-import EventDetailedView from "./components/events/EventDetailedView";
 import SearchBar from "./components/search-bar/SearchBar";
 
 class App extends Component {
@@ -35,10 +32,6 @@ class App extends Component {
             <Route exact path="/Internships" component={Internships} />
             <Route exact path="/Internships/add" component={InternshipForms.AddInternship} />
             <Route exact path={`/Internships/edit/:id`} component={InternshipForms.EditInternship} />
-            <Route exact path="/Events" component={Events} />
-            <Route exact path="/Events/add" component={EventsForm.AddEvent} />
-            <Route exact path="/Events/edit/:id" component={EventsForm.EditEvent} />
-            <Route exact path="/Events/details/:id" component={EventDetailedView} />
             <Route exact path="/Mentors" component={Mentors} />
             <Route exact path="/Mentors/add" component={MentorForms.AddMentor} />
             <Route exact path={`/Mentors/edit/:id`} component={MentorForms.EditMentor} />

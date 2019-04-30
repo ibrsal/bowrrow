@@ -28,21 +28,21 @@ class Internships extends React.Component {
     } else {
       return (
         <div className="container"> 
-        <h1>Internships</h1> 
+        <h1>Customers</h1> 
         <br/>
             <Link className="btn btn-outline-danger btn-lg btn-block mentor-add-button" to="/Internships/add">Add Internship</Link>
             {internships.map(item => (
               <div key={item.id} className="card mb-4">
         
                 <div className="card-header">
-                <h5 className="card-title">{item.internship_title}</h5>
+                <h5 className="card-title">{item.customer_name}</h5>
                
                 </div>
                 <div className="card-body">
                   <div className="row">
                       <div className="col-md-8">
-                              <p className="card-text">{item.internship_description}</p>
-                          <p className="card-text">Place : {item.location}</p>
+                              <p className="card-text">{item.phone_contact}</p>
+                          <p className="card-text">Place : {item.organisation_address}</p>
                           <Link to="#" className="btn btn-danger">
                             Read more...
                           </Link>

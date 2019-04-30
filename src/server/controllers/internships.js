@@ -2,7 +2,7 @@ import SqlString from 'sqlstring';
 import db from '../config/db';
 
 export function listAllInternships(req, res) {
-  const sql = SqlString.format('SELECT * FROM internships WHERE active=?', [
+  const sql = SqlString.format('SELECT * FROM customers WHERE active=?', [
     true,
   ]);
   console.log(sql);
