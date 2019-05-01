@@ -30,7 +30,7 @@ class Customers extends React.Component {
         <div className="container"> 
         <h1>Customers</h1> 
         <br/>
-            <Link className="btn btn-outline-danger btn-lg btn-block mentor-add-button" to="/Customers/add">Add customer</Link>
+            <Link className="btn btn-outline-danger btn-lg btn-block client-add-button" to="/Customers/add">Add customer</Link>
             {customers.map(item => (
               <div key={item.id} className="card mb-4">
         

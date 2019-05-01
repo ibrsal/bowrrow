@@ -25,9 +25,9 @@ class Header extends React.Component {
                                             <li className="nav-item iconCustomer">
                                                 <span className="icon material-icons md-36 md-dark">build</span>
                                                 <Link to="/Customers" className="menuLink nav-link"> Customers </Link></li>
-                                            <li className="nav-item iconMentors">
+                                            <li className="nav-item iconClients">
                                                 <span className="icon material-icons md-36 md-dark">accessibility_new</span>
-                                                <Link to="/Mentors" className="menuLink nav-link"> Mentors </Link></li>
+                                                <Link to="/Clients" className="menuLink nav-link"> Clients </Link></li>
                                             <li className="nav-item iconNetwork">
                                                 <span className="icon material-icons md-36 md-dark">people</span>
                                                 <Link to="/Networking" className="nav-link"> Networking </Link></li>

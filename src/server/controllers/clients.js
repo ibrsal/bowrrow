@@ -1,8 +1,8 @@
 import SqlString from 'sqlstring';
 import db from '../config/db';
 
-export function listAllMentors(req, res) {
-    const sql = SqlString.format('SELECT * FROM mentors WHERE active=?', [
+export function listAllClients(req, res) {
+    const sql = SqlString.format('SELECT * FROM clients WHERE active=?', [
       true,
     ]);
     console.log(sql);
@@ -17,9 +17,9 @@ export function listAllMentors(req, res) {
     });
   }
   
-  export function createMentor(req, res) {
+  export function createClient(req, res) {
     const jsonData = req.body;
-    const sql = SqlString.format(`INSERT INTO mentors SET ?`, jsonData);
+    const sql = SqlString.format(`INSERT INTO clients SET ?`, jsonData);
     console.log(sql);
   
     db.execute(sql, (err, result) => {
@@ -35,11 +35,11 @@ export function listAllMentors(req, res) {
     });
   }
   
-  export function getMentorById(req, res) {
-    const mentorId = req.params.id;
+  export function getClientById(req, res) {
+    const clientId = req.params.id;
     const sql = SqlString.format(
-      'SELECT * FROM mentors WHERE id = ? AND active = ?',
-      [mentorId, true],
+      'SELECT * FROM clients WHERE id = ? AND active = ?',
+      [clientId, true],
     );
     console.log(sql);
   
@@ -59,13 +59,13 @@ export function listAllMentors(req, res) {
     });
   }
   
-  export function updateMentor(req, res) {
-    const mentorId = req.params.id;
+  export function updateClient(req, res) {
+    const clientId = req.params.id;
     const jsonData = req.body;
   
-    const sql = SqlString.format(`UPDATE mentors SET ? WHERE id = ?`, [
+    const sql = SqlString.format(`UPDATE clients SET ? WHERE id = ?`, [
       jsonData,
-      mentorId,
+      clientId,
     ]);
     
     console.log(sql);
@@ -86,13 +86,13 @@ export function listAllMentors(req, res) {
     });
   }
   
-  export function deleteMentor(req, res) {
-    const mentorId = req.params.id;
-    const sql = SqlString.format(`UPDATE mentors SET ? WHERE id = ?`, [
+  export function deleteClient(req, res) {
+    const clientId = req.params.id;
+    const sql = SqlString.format(`UPDATE clients SET ? WHERE id = ?`, [
       {
         active: false,
       },
-      mentorId,
+      clientId,
     ]);
   
     console.log(sql);

@@ -1,4 +1,4 @@
-.mentorsLi {
+.clientsLi {
     padding: 10px;
     color: brown;
 }
@@ -15,16 +15,16 @@
     font-style: italic;
     color: blueviolet;
 }
-.mentor-image{
+.client-image{
     height: 220px;
 }
-/* @media (min-width: 600px) .mentor-image{
+/* @media (min-width: 600px) .client-image{
      height: 33vw;
     width: 33vw; 
 
 } */
 
-.mentor-add-button{
+.client-add-button{
     margin-bottom:20px;
     padding: 10px;
 }

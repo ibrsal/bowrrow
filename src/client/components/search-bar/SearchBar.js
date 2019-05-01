@@ -23,7 +23,7 @@ class SearchBar extends React.Component{
                         <select className="custom-select" id="inputGroupSelect02">
                             <option defaultValue>Choose...</option>
                             <option value="2">Customers</option>
-                            <option value="3">Mentors</option>
+                            <option value="3">Clients</option>
                             <option value="4">Networking</option>
                         </select>
                     </div>

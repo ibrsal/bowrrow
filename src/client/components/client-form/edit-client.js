@@ -1,22 +1,22 @@
 import React, { Component } from 'react';
-import MentorForm from './mentor-form';
+import ClientForm from './client-form';
 
 // export default (props) => {
 //     // Do the fetching, and render the form only when the data is here
 //     return (
-//         <MentorForm {...props} isEditing={true} />
+//         <ClientForm {...props} isEditing={true} />
 //     )
 // }
 
-class EditMentor extends Component {
+class EditClient extends Component {
     state = {
         isLoading: true,
         message: 'Hang in there...',
-        mentorData: null
+        clientData: null
     }
 
     componentDidMount() {
-        const url = '/api/mentors'
+        const url = '/api/clients'
         const id = this.props.match.params.id;
 
         // TODO handle failure (404)
@@ -27,7 +27,7 @@ class EditMentor extends Component {
         ).then(
             data => this.setState({
                 isLoading: false,
-                mentorData: data
+                clientData: data
             })
         )
         // .catch(error => this.setState({
@@ -40,9 +40,9 @@ class EditMentor extends Component {
             this.state.isLoading ? 
                 <div>{this.state.message}</div>
                 :
-                <MentorForm {...this.props} mentorData={this.state.mentorData} id={this.props.match.params.id} isEditing={true} />
+                <ClientForm {...this.props} clientData={this.state.clientData} id={this.props.match.params.id} isEditing={true} />
         )
     }
 }
 
-export default EditMentor;
+export default EditClient;

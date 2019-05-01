@@ -1,7 +1,7 @@
 import express from "express";
 
 import customersRoute from "./customers";
-import mentorsRoute from "./mentors";
+import clientsRoute from "./clients";
 import networkingRoute from "./networking";
 
 const router = express.Router();
@@ -12,7 +12,7 @@ router.get("/hello", (req, res) => {
   });
 });
 router.use("/customers", customersRoute);
-router.use("/mentors", mentorsRoute);
+router.use("/clients", clientsRoute);
 router.use("/networking", networkingRoute);
 
 router.use((req, res, next) => {
