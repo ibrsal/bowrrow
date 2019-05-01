@@ -1,15 +1,15 @@
 import React from 'react';
-import InternshipForm from './internship-form';
+import CustomerForm from './customer-form';
 
-class EditInternship extends React.Component {
+class EditCustomer extends React.Component {
     state = {
         isLoading: true,
         message: 'Hang in there...',
-        internshipData: null
+        customerData: null
     }
 
     componentDidMount() {
-        const url = '/api/internships'
+        const url = '/api/customers'
         const id = this.props.match.params.id;
 
         // TODO handle failure (404)
@@ -20,7 +20,7 @@ class EditInternship extends React.Component {
         ).then(
             data => this.setState({
                 isLoading: false,
-                internshipData: data
+                customerData: data
             })
         )
         // .catch(error => this.setState({
@@ -33,9 +33,9 @@ class EditInternship extends React.Component {
             this.state.isLoading ? 
                 <div>{this.state.message}</div>
                 :
-                <InternshipForm {...this.props} internshipData={this.state.internshipData} id={this.props.match.params.id} isEditing={true} />
+                <CustomerForm {...this.props} customerData={this.state.customerData} id={this.props.match.params.id} isEditing={true} />
         )
     }
 }
 
-export default EditInternship;
+export default EditCustomer;

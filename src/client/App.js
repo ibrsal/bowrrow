@@ -6,7 +6,7 @@ import "@material/card/dist/mdc.card.min.css";
 
 import Footer from "./components/footer/Footer";
 import Header from "./components/header/Header";
-import Internships from "./components/internships/Internships";
+import Customers from "./components/customers/customers";
 import Homepage from "./components/home/HomePage";
 import Mentors from "./components/mentors/Mentors";
 import Networking from "./components/networking/Networking";
@@ -14,7 +14,7 @@ import NetworkingItemDetails from "./components/networking/Network-item-details"
 import Company from "./components/networking/Company";
 import MentorForms from "./components/mentor-form";
 import NetworkForms from "./components/networking-form";
-import InternshipForms from "./components/internship-form";
+import CustomerForms from "./components/customer-form";
 import SearchBar from "./components/search-bar/SearchBar";
 
 class App extends Component {
@@ -29,9 +29,9 @@ class App extends Component {
 
           <Switch>
             <Route exact path="/" component={Homepage} />
-            <Route exact path="/Internships" component={Internships} />
-            <Route exact path="/Internships/add" component={InternshipForms.AddInternship} />
-            <Route exact path={`/Internships/edit/:id`} component={InternshipForms.EditInternship} />
+            <Route exact path="/Customers" component={Customers} />
+            <Route exact path="/Customers/add" component={CustomerForms.AddCustomer} />
+            <Route exact path={`/Customers/edit/:id`} component={CustomerForms.EditCustomer} />
             <Route exact path="/Mentors" component={Mentors} />
             <Route exact path="/Mentors/add" component={MentorForms.AddMentor} />
             <Route exact path={`/Mentors/edit/:id`} component={MentorForms.EditMentor} />

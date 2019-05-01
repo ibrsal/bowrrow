@@ -1,6 +1,6 @@
 import express from "express";
 
-import internshipsRoute from "./internships";
+import customersRoute from "./customers";
 import mentorsRoute from "./mentors";
 import networkingRoute from "./networking";
 
@@ -11,7 +11,7 @@ router.get("/hello", (req, res) => {
     hello: "world"
   });
 });
-router.use("/internships", internshipsRoute);
+router.use("/customers", customersRoute);
 router.use("/mentors", mentorsRoute);
 router.use("/networking", networkingRoute);
 

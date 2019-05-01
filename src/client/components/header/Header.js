@@ -19,12 +19,12 @@ class Header extends React.Component {
                                 <div className="menu">
                                     <nav>
                                         <ul className="nav">
-                                            <li className="nav-item iconInternship">
+                                            <li className="nav-item iconCustomer">
                                                 <span className="icon material-icons md-36 md-dark">home</span>
                                                 <Link to="/" className="nav-link menuLink"> Home </Link></li>
-                                            <li className="nav-item iconInternship">
+                                            <li className="nav-item iconCustomer">
                                                 <span className="icon material-icons md-36 md-dark">build</span>
-                                                <Link to="/Internships" className="menuLink nav-link"> Internships </Link></li>
+                                                <Link to="/Customers" className="menuLink nav-link"> Customers </Link></li>
                                             <li className="nav-item iconMentors">
                                                 <span className="icon material-icons md-36 md-dark">accessibility_new</span>
                                                 <Link to="/Mentors" className="menuLink nav-link"> Mentors </Link></li>

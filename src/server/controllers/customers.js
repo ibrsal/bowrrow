@@ -1,7 +1,7 @@
 import SqlString from 'sqlstring';
 import db from '../config/db';
 
-export function listAllInternships(req, res) {
+export function listAllCustomers(req, res) {
   const sql = SqlString.format('SELECT * FROM customers WHERE active=?', [
     true,
   ]);
@@ -17,9 +17,9 @@ export function listAllInternships(req, res) {
   });
 }
 
-export function createInternship(req, res) {
+export function createCustomer(req, res) {
   const jsonData = req.body;
-  const sql = SqlString.format(`INSERT INTO internships SET ?`, jsonData);
+  const sql = SqlString.format(`INSERT INTO customers SET ?`, jsonData);
   console.log(sql);
 
   db.execute(sql, (err, result) => {
@@ -35,11 +35,11 @@ export function createInternship(req, res) {
   });
 }
 
-export function getInternshipById(req, res) {
-  const internshipId = req.params.id;
+export function getCustomerById(req, res) {
+  const customerId = req.params.id;
   const sql = SqlString.format(
-    'SELECT * FROM internships WHERE id = ? AND active = ?',
-    [internshipId, true],
+    'SELECT * FROM customers WHERE id = ? AND active = ?',
+    [customerId, true],
   );
   console.log(sql);
 
@@ -59,13 +59,13 @@ export function getInternshipById(req, res) {
   });
 }
 
-export function updateInternship(req, res) {
-  const internshipId = req.params.id;
+export function updateCustomer(req, res) {
+  const customerId = req.params.id;
   const jsonData = req.body;
 
-  const sql = SqlString.format(`UPDATE internships SET ? WHERE id = ?`, [
+  const sql = SqlString.format(`UPDATE customers SET ? WHERE id = ?`, [
     jsonData,
-    internshipId,
+    customerId,
   ]);
   
   console.log(sql);
@@ -86,13 +86,13 @@ export function updateInternship(req, res) {
   });
 }
 
-export function deleteInternship(req, res) {
-  const internshipId = req.params.id;
-  const sql = SqlString.format(`UPDATE internships SET ? WHERE id = ?`, [
+export function deleteCustomer(req, res) {
+  const customerId = req.params.id;
+  const sql = SqlString.format(`UPDATE customers SET ? WHERE id = ?`, [
     {
       active: false,
     },
-    internshipId,
+    customerId,
   ]);
 
   console.log(sql);
