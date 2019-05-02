@@ -17,7 +17,7 @@ class ClientCustomers extends React.Component {
       return (
         <div className="container"> 
         <h1>Customers</h1> 
-
+{this.props.match.params.id}
         </div>
       );
     }

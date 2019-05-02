@@ -51,7 +51,7 @@ class Clients extends React.Component {
                   <strong>Availability</strong><br />
                   <span>{item.titel}</span> <br />
                 </p>
-                <a href="#" class="btn btn-danger">Read more..</a>
+                <a href={`/clientcustomers/${item.id}`} class="btn btn-danger">Read more..</a>
                 <Link to={`/Clients/edit/${item.id}`} target="_blank" className="btn btn-outline-danger btn-sm pull-right"> Edit</Link>                
               </div>
               </div>

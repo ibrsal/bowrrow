@@ -43,7 +43,7 @@ class Customers extends React.Component {
                       <div className="col-md-8">
                               <p className="card-text">{item.phone_contact}</p>
                           <p className="card-text">Place : {item.organisation_address}</p>
-                          <Link to={`/clientcustomers/${item.id}`} className="btn btn-danger">
+                          <Link to="#" className="btn btn-danger">
                             Read more...
                           </Link>
                       </div>
