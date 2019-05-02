@@ -32,7 +32,7 @@ class Customers extends React.Component {
         <br/>
             <Link className="btn btn-outline-danger btn-lg btn-block client-add-button" to="/Customers/add">Add customer</Link>
             {customers.map(item => (
-              <div key={item.id} className="card mb-4">
+              <div key={item.id} className="card mb-4" onClick={this.props.onClick}>
         
                 <div className="card-header">
                 <h5 className="card-title">{item.customer_name}</h5>
@@ -43,7 +43,7 @@ class Customers extends React.Component {
                       <div className="col-md-8">
                               <p className="card-text">{item.phone_contact}</p>
                           <p className="card-text">Place : {item.organisation_address}</p>
-                          <Link to="#" className="btn btn-danger">
+                          <Link to={`/clientcustomers/${item.id}`} className="btn btn-danger">
                             Read more...
                           </Link>
                       </div>

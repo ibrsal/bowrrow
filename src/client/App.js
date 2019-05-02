@@ -16,7 +16,7 @@ import ClientForms from "./components/client-form";
 import NetworkForms from "./components/networking-form";
 import CustomerForms from "./components/customer-form";
 import SearchBar from "./components/search-bar/SearchBar";
-
+import ClientCustomers from './components/client-customers/Client-customers'
 class App extends Component {
   render() {
     return (
@@ -40,6 +40,8 @@ class App extends Component {
             <Route exact path="/Networking/details/:id" component={NetworkingItemDetails}/>
             <Route exact path="/Networking/edit/:id" component={NetworkForms.editNetwork}/>
             <Route exact path={`/Networking/company/:id`} component={Company} />
+            <Route exact path={`/clientcustomers/:id`} component={ClientCustomers} />
+
           </Switch>
         </main>
         <footer>
