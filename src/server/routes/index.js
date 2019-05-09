@@ -3,6 +3,7 @@ import express from "express";
 import customersRoute from "./customers";
 import clientsRoute from "./clients";
 import clientcustmoersRoute from "./client-customers";
+import authRoute from './auth';
 
 import networkingRoute from "./networking";
 
@@ -17,6 +18,7 @@ router.use("/customers", customersRoute);
 router.use("/clients", clientsRoute);
 router.use("/clientcustomers", clientcustmoersRoute);
 router.use("/networking", networkingRoute);
+router.use("/auth", authRoute);
 
 router.use((req, res, next) => {
   const err = new Error("Not found.");

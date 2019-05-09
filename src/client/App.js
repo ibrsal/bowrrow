@@ -17,10 +17,18 @@ import NetworkForms from "./components/networking-form";
 import CustomerForms from "./components/customer-form";
 import SearchBar from "./components/search-bar/SearchBar";
 import ClientCustomers from './components/client-customers/Client-customers'
+import Login from "./components/login";
+import Logout from "./components/logout";
+import LoginContext, { loadContextValue } from './contexts/login';
+
 class App extends Component {
   render() {
+    const contextValue = loadContextValue();
+
     return (
       <div id="app">
+              <LoginContext.Provider value={contextValue}>
+
         <header>
           <Header />
         </header>
@@ -41,12 +49,15 @@ class App extends Component {
             <Route exact path="/Networking/edit/:id" component={NetworkForms.editNetwork}/>
             <Route exact path={`/Networking/company/:id`} component={Company} />
             <Route exact path={`/clientcustomers/:id`} component={ClientCustomers} />
-
+            <Route exact path="/login" component={Login} />
+              <Route exact path="/logout" component={Logout} />
           </Switch>
         </main>
         <footer>
           <Footer />
         </footer>
+        </LoginContext.Provider>
+
       </div>
     );
   }
