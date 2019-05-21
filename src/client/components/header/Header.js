@@ -6,6 +6,7 @@ import LoginContext from '../../contexts/login';
 import "./Header.css";
 
 class Header extends React.Component {
+    static contextType= LoginContext;
     render() {
         return (
             <div className="container-fluid">
