@@ -40,15 +40,19 @@ class App extends Component {
             <Route exact path="/Customers" component={Customers} />
             <Route exact path="/Customers/add" component={CustomerForms.AddCustomer} />
             <Route exact path={`/Customers/edit/:id`} component={CustomerForms.EditCustomer} />
+
             <Route exact path="/Clients" component={Clients} />
             <Route exact path="/Clients/add" component={ClientForms.AddClient} />
             <Route exact path={`/Clients/edit/:id`} component={ClientForms.EditClient} />
+
             <Route exact path="/Networking" component={Networking} />
             <Route exact path="/Networking/add" component={NetworkForms.addNetwork}/>
             <Route exact path="/Networking/details/:id" component={NetworkingItemDetails}/>
             <Route exact path="/Networking/edit/:id" component={NetworkForms.editNetwork}/>
             <Route exact path={`/Networking/company/:id`} component={Company} />
+
             <Route exact path={`/clientcustomers/:id`} component={ClientCustomers} />
+            
             <Route exact path="/login" component={Login} />
               <Route exact path="/logout" component={Logout} />
           </Switch>
