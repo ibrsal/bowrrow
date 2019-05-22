@@ -1,10 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
+import classNames from 'classnames';
+import LoginContext from '../contexts/login';
 import './Clients.css';
 
 class Clients extends React.Component {
-
+static contextType=LoginContext;
   constructor(props) {
     super(props);
     this.state = {
@@ -24,7 +25,9 @@ class Clients extends React.Component {
         })
       });
   }
-
+  renderAddNewEventButton = () => (
+    <a className={`btn btn-outline-danger add-event-btn ${classNames({ disabled: !this.context.isLoggedIn })}`} href="/Clients/add">ADD NEW EVENT</a> 
+  )
   render() {
 
     const { isLoaded, items } = this.state;
@@ -39,7 +42,8 @@ class Clients extends React.Component {
           <div className="row">
           <div className="col">
           <h1>Clients</h1> <br />
-            <Link className="btn btn-outline-danger btn-lg btn-block client-add-button" to="/Clients/add">Add New Client</Link>
+          {this.renderAddNewEventButton()}
+
             <div className="card-columns">
 
             {items.map(item => (

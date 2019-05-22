@@ -1,7 +1,7 @@
 import React from "react";
 import logo from "../../thread-logo.png";
 import { Link } from "react-router-dom";
-import LoginContext from '../../contexts/login';
+import LoginContext from '../contexts/login';
 
 import "./Header.css";
 

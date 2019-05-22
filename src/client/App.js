@@ -19,7 +19,7 @@ import SearchBar from "./components/search-bar/SearchBar";
 import ClientCustomers from './components/client-customers/Client-customers'
 import Login from "./components/login";
 import Logout from "./components/logout";
-import LoginContext, { loadContextValue } from './contexts/login';
+import LoginContext, { loadContextValue } from './components/contexts/login';
 
 class App extends Component {
   render() {
