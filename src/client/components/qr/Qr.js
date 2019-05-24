@@ -6,7 +6,7 @@ class Qr extends React.Component {
         super(props);
        
         this.state = {
-            value : this.props.value
+            value : this.props.value + this.props.name
         }
 
     }
