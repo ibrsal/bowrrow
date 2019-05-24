@@ -47,7 +47,7 @@ static contextType=LoginContext;
             <div className="card-columns">
 
             {items.map(item => (
-              <div key={item.id} class="card">
+              <div key={item.id} className="card">
               <div className="card-body">
                 <h5 className="card-title">{item.name}</h5>
                 <p className="card-text"><strong>Services</strong><br />
@@ -55,7 +55,7 @@ static contextType=LoginContext;
                   <strong>Availability</strong><br />
                   <span>{item.titel}</span> <br />
                 </p>
-                <a href={`/clientcustomers/${item.id}`} class="btn btn-danger">Read more..</a>
+                <a href={`/clientcustomers/${item.id}`} className="btn btn-danger">Read more..</a>
                 <Link to={`/Clients/edit/${item.id}`}  className="btn btn-outline-danger btn-sm pull-right"> Edit</Link>                
               </div>
               </div>

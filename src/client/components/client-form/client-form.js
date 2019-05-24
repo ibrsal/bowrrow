@@ -51,6 +51,20 @@ class ClientForm extends Component {
             url = `/api/clients`
             method = 'POST';
         }
+        deleteClient = () =>{
+            console.log("deleting.....");
+            protectedFetch(`/api/clients/${this.props.match.params.id}`,{
+              method: 'DELETE'
+            }).then(res => res.json())
+            .then(response=> {
+              console.log('deelete :', response);
+              this.setState({
+                isActive : false
+            });
+            
+            })
+    
+        }
 
         fetch(url, {
             method,
