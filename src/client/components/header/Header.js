@@ -33,6 +33,9 @@ class Header extends React.Component {
                                             <li className="nav-item iconNetwork">
                                                 <span className="icon material-icons md-36 md-dark">people</span>
                                                 <Link to="/Networking" className="nav-link"> Networking </Link></li>
+                                                <li className="nav-item iconNetwork">
+                                                <span className="icon material-icons md-36 md-dark"></span>
+                                                <Link to="/Signup" className="nav-link"> Signup </Link></li>
                                                 {
                                                 this.context.isLoggedIn ?
                                                     <li className="nav-item iconCode">
