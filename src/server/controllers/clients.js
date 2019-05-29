@@ -30,7 +30,9 @@ export function listAllClients(req, res) {
       }
   
       console.log(result);
-  
+     // if added is ok send back success word
+     console.log(jsonData);
+//
       res.send('success');
     });
   }

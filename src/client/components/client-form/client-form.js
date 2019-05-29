@@ -22,6 +22,7 @@ class ClientForm extends Component {
                     "phone": "",
                     "address": "",
                     "title": "",
+                    "type": "",
                     "active": 1
                 }
             }
@@ -57,7 +58,7 @@ class ClientForm extends Component {
               method: 'DELETE'
             }).then(res => res.json())
             .then(response=> {
-              console.log('deelete :', response);
+              console.log('delete :', response);
               this.setState({
                 isActive : false
             });
