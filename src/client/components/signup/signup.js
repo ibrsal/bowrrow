@@ -8,6 +8,7 @@ class SearchBar extends React.Component {
       clientData: {
         "user-name": "",
         email: "",
+        password:"",
         phone: "",
         address: "",
         title: "",
