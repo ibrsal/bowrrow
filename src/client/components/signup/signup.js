@@ -6,7 +6,7 @@ class SearchBar extends React.Component {
 
     this.state = {
       clientData: {
-        "user-name": "",
+        username: "",
         email: "",
         password:"",
         phone: "",
@@ -59,9 +59,20 @@ class SearchBar extends React.Component {
               <input
                 type="text"
                 className="form-control mb-3"
-                name="user-name"
+                name="username"
                 id="inlineFormInput"
                 placeholder="User name"
+                onChange={this.updateField}
+              />
+            </div>
+            <br />
+            <div className="col-auto">
+              <input
+                type="text"
+                className="form-control mb-3"
+                name="password"
+                id="inlineFormInput"
+                placeholder="password"
                 onChange={this.updateField}
               />
             </div>

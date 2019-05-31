@@ -1,5 +1,7 @@
 import SqlString from 'sqlstring';
 import db from '../config/db';
+import bcrypt from 'bcrypt';
+const saltRounds = 10;
 
 export function listAllClients(req, res) {
     const sql = SqlString.format('SELECT * FROM clients WHERE active=?', [
@@ -19,19 +21,26 @@ export function listAllClients(req, res) {
   
   export function createClient(req, res) {
     const jsonData = req.body;
+    var hash = bcrypt.hashSync(jsonData.password, saltRounds);
+    jsonData.password=hash;
+    
     const sql = SqlString.format(`INSERT INTO clients SET ?`, jsonData);
+    console.log("sql from backend is ");
+
     console.log(sql);
-  
+   
     db.execute(sql, (err, result) => {
       if (err) {
         // throw err;
         res.status(500).send(err);
         return;
       }
-  
+      console.log("result from backend is ");
+
       console.log(result);
      // if added is ok send back success word
-     console.log(jsonData);
+     console.log("jsonData in backend is : ")
+     console.log( jsonData);
 //
       res.send('success');
     });
