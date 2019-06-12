@@ -62,7 +62,6 @@ class App extends Component {
           </Switch>
         </main>
         <footer>
-          <Footer />
         </footer>
         </LoginContext.Provider>
 

@@ -25,9 +25,7 @@ export function listAllClients(req, res) {
     jsonData.password=hash;
     
     const sql = SqlString.format(`INSERT INTO clients SET ?`, jsonData);
-    console.log("sql from backend is ");
-
-    console.log(sql);
+   console.log(sql);
    
     db.execute(sql, (err, result) => {
       if (err) {
@@ -35,15 +33,18 @@ export function listAllClients(req, res) {
         res.status(500).send(err);
         return;
       }
-      console.log("result from backend is ");
-
       console.log(result);
      // if added is ok send back success word
-     console.log("jsonData in backend is : ")
      console.log( jsonData);
 //
-      res.send('success');
+      res.send(jsonData);
+      // get inserted id user
+      console.log(result.insertId);
+
+
     });
+
+    
   }
   
   export function getClientById(req, res) {

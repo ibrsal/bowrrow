@@ -4,7 +4,7 @@ import {
   login
 } from '../controllers/auth';
 
-console.log({ login });
+console.log("from login Route" + { login });
 
 const router = express.Router();
 

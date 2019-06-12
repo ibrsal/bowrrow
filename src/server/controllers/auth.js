@@ -1,14 +1,18 @@
 import bcrypt from 'bcrypt';
 import jwt from "jsonwebtoken";
+import SqlString from 'sqlstring';
+import db from '../config/db';
 
 import UnauthorizedError from '../errors/UnauthorizedError';
 
 const jwtPass = "caipaenie7thol8Z";
 
+
 // The email and password hash should be saved to a database, they are hard-coded here for simplification
-const email = "hest@hyf.com";
+var email = null;
+console.log( "hest@hyf.com");
 // const password = "jacob";
-const passwordHash = '$2b$10$0Jvk7/fBmMI/mISeI1p2zus/UkRG0dWrlTWvyPl6h1P7o3krvjZae';
+var passwordHash = null;
 
 
 // const encryptPassword = pass => {
@@ -50,8 +54,43 @@ export const authenticatedRoute = (req, res, next) => {
   next();
 };
 
+
 export const login = (req, res, next) => {
+  // get user info from login page
+
+  console.log( req.body.email);
   const jsonData = req.body;
+console.log("from login function ");
+const clientemail =  req.body.email;
+console.log(clientemail);
+  
+const sql = SqlString.format(
+  'SELECT * FROM clients WHERE email = ?',
+  [clientemail],
+);
+console.log("fetch fro data base user info " + sql);
+
+db.execute(sql, (err, rows) => {
+  if (err) {
+    // throw err;
+    res.status(500).send(err);
+    return;
+  }
+
+  if (rows.length === 0) {
+    res.status(404).send('Not Found');
+    return;
+  }
+console.log(rows);
+ // res.send(rows[0]);
+ email=rows[0].email;
+ passwordHash=rows[0].password;
+ console.log(email);
+ console.log(passwordHash);
+});
+
+//
+
 
   if (!checkLoginInfo(jsonData.email, jsonData.password)) {
     // return res.send(401, new UnauthorizedError('credentials_invalid', { message: "User name and password don't match our records" }));
