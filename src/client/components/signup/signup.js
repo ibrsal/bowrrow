@@ -92,7 +92,7 @@ fetch("/api/auth/login", {
           <div className=" align-items-center">
             <div className="col-auto">
               <input
-                type="text"
+                type="email"
                 className="form-control mb-3"
                 name="username"
                 id="inlineFormInput"
@@ -103,7 +103,7 @@ fetch("/api/auth/login", {
             <br />
             <div className="col-auto">
               <input
-                type="text"
+                 type="password"
                 className="form-control mb-3"
                 name="password"
                 id="inlineFormInput"
