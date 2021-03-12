@@ -85,7 +85,7 @@
     "postcss-preset-env": "^6.0.10",
     "postcss-pxtorem": "^4.0.1",
     "prettier": "^1.13.5",
-    "react-dev-utils": "^6.0.5",
+    "react-dev-utils": "^11.0.4",
     "style-loader": "^0.23.1",
     "url-loader": "^1.1.2",
     "webpack": "^4.22.0",
